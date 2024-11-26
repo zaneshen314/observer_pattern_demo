@@ -23,8 +23,6 @@ public class WeatherMonitoringImpl implements ISubject {
     @Override
     public void notifyAllObservers() {
         System.out.println("【气象检测】台风将至，所有航班立即停航！");
-        for (IObserver observer : mObserversList) {
-            observer.response();
-        }
+        mObserversList.forEach(IObserver::response);
     }
 }
