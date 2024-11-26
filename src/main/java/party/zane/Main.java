@@ -1,12 +1,15 @@
 package party.zane;
 
 
+import party.zane.impl.CaptainObserverImpl;
+import party.zane.impl.WeatherMonitoringImpl;
+
 public class Main {
     public static void main(String[] args) {
-        SubjectImpl observable = new SubjectImpl();
+        WeatherMonitoringImpl observable = new WeatherMonitoringImpl();
 
-        ObserverImpl observer1 = new ObserverImpl("观察者 1 ：");
-        ObserverImpl observer2 = new ObserverImpl("观察者 2 ：");
+        CaptainObserverImpl observer1 = new CaptainObserverImpl("Don");
+        CaptainObserverImpl observer2 = new CaptainObserverImpl("Zane");
 
         observable.registerObserver(observer1);
         observable.registerObserver(observer2);

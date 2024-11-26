@@ -1,9 +1,12 @@
-package party.zane;
+package party.zane.impl;
+
+import party.zane.IObserver;
+import party.zane.ISubject;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SubjectImpl implements ISubject {
+public class WeatherMonitoringImpl implements ISubject {
 
     private final List<IObserver> mObserversList = new ArrayList<>();
 
@@ -19,6 +22,7 @@ public class SubjectImpl implements ISubject {
 
     @Override
     public void notifyAllObservers() {
+        System.out.println("【气象检测】台风将至，所有航班立即停航！");
         for (IObserver observer : mObserversList) {
             observer.response();
         }
